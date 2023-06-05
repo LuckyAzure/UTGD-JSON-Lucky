@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://Global.gd"
+Transaction="*res://src/effects/transaction.tscn"
 
 [display]
 

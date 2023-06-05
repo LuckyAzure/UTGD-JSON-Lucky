@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcf8d7mjrmduq"]
+
+[ext_resource type="Script" path="res://src/effects/transaction.gd" id="1_u3atg"]
+
+[node name="Transaction" type="CanvasLayer"]
+script = ExtResource("1_u3atg")
+
+[node name="Fade" type="ColorRect" parent="."]
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0, 0, 0, 1)

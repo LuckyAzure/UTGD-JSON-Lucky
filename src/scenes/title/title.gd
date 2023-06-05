@@ -23,12 +23,12 @@ func _process(delta):
 			select += 1
 		elif Input.is_action_just_pressed("Confirm"):
 			selected = true
-			trans_cooldown = 0.5
+			trans_cooldown = 0.2
 			$Sounds/Select.play(0)
 	else:
 		trans_cooldown -= delta
 		if trans_cooldown < 0:
-			get_tree().change_scene_to_file("res://src/scenes/credits/credits.tscn")
+			Global.change_scene("res://src/scenes/credits/credits.tscn")
 
 	$Soul.position.y = lerp($Soul.position.y, 256.0 + (select * 40.0), 10.0 * delta)
 

@@ -3,8 +3,8 @@ extends Node2D
 var creditsData = [
 	["--Example--", null, true],
 	["Example", "ExampleDesc", false],
-	["--Engine--", null, true],
-	["Lucky", "Who made this engine in godot.", false],
+	["--Engine Credits--", null, true],
+	["LuckyAzure", "Creator of this engine.", false],
 	["--Undertale Credits--", null, true],
 	["Toby Fox", "Main developer and composer.", false],
 	["Temmie Chang", "Artistic assistant.", false],
@@ -23,7 +23,18 @@ var creditsData = [
 	["Everdraed", "Asset and animation creator.", false],
 	["Flashygoodness", "Programming help.", false],
 	["Leon Arnott", "Programming help and Mac OS X porting.", false],
-	["Mike Reid", "Guest designer for Glyde.", false]
+	["Mike Reid", "Guest designer for Glyde.", false],
+	["--Special Thanks--", null, true],
+	["UNSTOP4BLE", "", false],
+	["???", "", false],
+	["???", "", false],
+	["???", "", false],
+	["???", "", false],
+	["???", "", false],
+	["???", "", false],
+	["???", "", false],
+	["???", "", false],
+	["???", "", false]
 ]
 
 var textnode: PackedScene
@@ -73,12 +84,12 @@ func _process(delta):
 				select = 1
 		elif Input.is_action_just_pressed("Cancel"):
 			selected = true
-			trans_cooldown = 0.5
+			trans_cooldown = 0.2
 			$Sounds/Switch.play(0)
 	else:
 		trans_cooldown -= delta
 		if trans_cooldown < 0:
-			get_tree().change_scene_to_file("res://src/scenes/title/title.tscn")
+			Global.change_scene("res://src/scenes/title/title.tscn")
 	
 	$CanvasLayer/Desc.text = creditsData[select][1]
 	$CanvasLayer/Desc.modulate.a = lerp($CanvasLayer/Desc.modulate.a, 1.0, 15.0 * delta)
