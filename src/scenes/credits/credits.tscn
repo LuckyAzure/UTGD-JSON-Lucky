@@ -1,22 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://1jqtk4kqt7p4"]
+[gd_scene load_steps=11 format=3 uid="uid://1jqtk4kqt7p4"]
 
 [ext_resource type="Shader" path="res://src/shaders/outline.gdshader" id="1_gdir4"]
+[ext_resource type="Script" path="res://src/scenes/credits/credits.gd" id="1_hdxpa"]
 [ext_resource type="FontFile" uid="uid://dk56m0bqtpgj4" path="res://iso/fonts/determinationmonoweb-webfont.ttf" id="2_f77a3"]
+[ext_resource type="AudioStream" uid="uid://cmofvrlunrq53" path="res://iso/sounds/select_delayed.wav" id="2_l2cte"]
+[ext_resource type="AudioStream" uid="uid://creh4pd5ljd7k" path="res://iso/sounds/Select.wav" id="3_fayq5"]
+[ext_resource type="Shader" path="res://src/shaders/outlinesprite.gdshader" id="6_cusyx"]
+[ext_resource type="Texture2D" uid="uid://cxj36n5drw1bj" path="res://iso/images/soul/Soul.png" id="7_dl833"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n8rvk"]
 shader = ExtResource("1_gdir4")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x35ik"]
+shader = ExtResource("6_cusyx")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/width = 2.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t8th0"]
+shader = ExtResource("1_gdir4")
+
 [node name="Credits" type="Node2D"]
+script = ExtResource("1_hdxpa")
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Switch" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("2_l2cte")
+
+[node name="Select" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("3_fayq5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 640.0
 offset_bottom = 480.0
 color = Color(0, 0.0156863, 0.658824, 1)
 
-[node name="Title" type="Label" parent="."]
+[node name="Credits" type="Label" parent="."]
 material = SubResource("ShaderMaterial_n8rvk")
-offset_left = 444.0
-offset_right = 542.0
+offset_left = 464.0
+offset_right = 552.0
 offset_bottom = 36.0
 scale = Vector2(2, 2)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -30,3 +55,37 @@ theme_override_font_sizes/font_size = 16
 text = "Credits"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Soul" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+material = SubResource("ShaderMaterial_x35ik")
+position = Vector2(114, 259)
+texture = ExtResource("7_dl833")
+region_rect = Rect2(0, -2, 20, 20)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+offset_top = 341.0
+offset_right = 640.0
+offset_bottom = 440.0
+color = Color(0, 0, 0, 0.698039)
+
+[node name="Desc" type="Label" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_t8th0")
+offset_left = 16.0
+offset_top = 356.0
+offset_right = 323.0
+offset_bottom = 385.0
+scale = Vector2(2, 2)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 4
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_f77a3")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
