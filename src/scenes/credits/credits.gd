@@ -52,6 +52,7 @@ var trans_cooldown = 0
 func _process(delta):
 	if !selected:
 		if Input.is_action_just_pressed("Up"):
+			$CanvasLayer/Desc.modulate.a = 0
 			$Sounds/Switch.play(0)
 			if select > 0:
 				select -= 1
@@ -62,6 +63,7 @@ func _process(delta):
 			else:
 				select = creditsData.size() - 1
 		elif Input.is_action_just_pressed("Down"):
+			$CanvasLayer/Desc.modulate.a = 0
 			$Sounds/Switch.play(0)
 			if select < creditsData.size() - 1:
 				select += 1
@@ -79,4 +81,4 @@ func _process(delta):
 			get_tree().change_scene_to_file("res://src/scenes/title/title.tscn")
 	
 	$CanvasLayer/Desc.text = creditsData[select][1]
-	
+	$CanvasLayer/Desc.modulate.a = lerp($CanvasLayer/Desc.modulate.a, 1.0, 15.0 * delta)

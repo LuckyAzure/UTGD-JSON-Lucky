@@ -9,9 +9,6 @@
 [ext_resource type="Shader" path="res://src/shaders/outlinesprite.gdshader" id="4_nf5d2"]
 [ext_resource type="AudioStream" uid="uid://cswbt26m5r8d7" path="res://iso/music/Psychosis..wav" id="8_oddi5"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_g0u35"]
-shader = ExtResource("1_w3bkh")
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k6var"]
 shader = ExtResource("4_nf5d2")
 shader_parameter/color = Color(0, 0, 0, 1)
@@ -19,6 +16,9 @@ shader_parameter/width = 2.0
 shader_parameter/pattern = 2
 shader_parameter/inside = false
 shader_parameter/add_margins = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g0u35"]
+shader = ExtResource("1_w3bkh")
 
 [node name="Title" type="Node2D"]
 script = ExtResource("1_vgpnl")
@@ -37,7 +37,6 @@ offset_bottom = 480.0
 color = Color(0, 0.0156863, 0.658824, 1)
 
 [node name="Title" type="Label" parent="."]
-material = SubResource("ShaderMaterial_g0u35")
 offset_top = 70.0
 offset_right = 321.0
 offset_bottom = 122.0
@@ -55,7 +54,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Reset" type="Label" parent="."]
-material = SubResource("ShaderMaterial_g0u35")
 offset_left = 65.0
 offset_top = 236.0
 offset_right = 193.0
@@ -72,7 +70,6 @@ text = "Reset"
 vertical_alignment = 1
 
 [node name="Continue" type="Label" parent="."]
-material = SubResource("ShaderMaterial_g0u35")
 offset_left = 38.0
 offset_top = 276.0
 offset_right = 166.0
@@ -89,7 +86,6 @@ text = "Continue"
 vertical_alignment = 1
 
 [node name="Extras" type="Label" parent="."]
-material = SubResource("ShaderMaterial_g0u35")
 offset_left = 38.0
 offset_top = 316.0
 offset_right = 166.0
@@ -106,7 +102,6 @@ text = "Extras"
 vertical_alignment = 1
 
 [node name="Options" type="Label" parent="."]
-material = SubResource("ShaderMaterial_g0u35")
 offset_left = 38.0
 offset_top = 356.0
 offset_right = 166.0
@@ -123,7 +118,6 @@ text = "Options"
 vertical_alignment = 1
 
 [node name="Credits" type="Label" parent="."]
-material = SubResource("ShaderMaterial_g0u35")
 offset_left = 38.0
 offset_top = 396.0
 offset_right = 166.0
