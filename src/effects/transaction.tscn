@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://src/effects/transaction.gd" id="1_u3atg"]
 
 [node name="Transaction" type="CanvasLayer"]
+layer = 128
 script = ExtResource("1_u3atg")
 
 [node name="Fade" type="ColorRect" parent="."]

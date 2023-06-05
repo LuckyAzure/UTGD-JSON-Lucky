@@ -67,7 +67,7 @@ vertical_alignment = 1
 [node name="Soul" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
 material = SubResource("ShaderMaterial_x35ik")
-position = Vector2(114, 259)
+position = Vector2(120, 260)
 texture = ExtResource("7_dl833")
 region_rect = Rect2(0, -2, 20, 20)
 

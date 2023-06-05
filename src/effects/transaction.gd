@@ -7,6 +7,10 @@ func _ready():
 
 func _process(delta):
 	if fadetype:
-		$Fade.modulate.a = lerp($Fade.modulate.a,1.0,($Fade.modulate.a * 10) * delta)
+		$Fade.modulate.a += 3 * delta
 	else:
-		$Fade.modulate.a = lerp($Fade.modulate.a,0.0,($Fade.modulate.a * 10) * delta)
+		$Fade.modulate.a -= 3 * delta
+	if $Fade.modulate.a < 0:
+		$Fade.modulate.a = 0
+	elif $Fade.modulate.a > 1:
+		$Fade.modulate.a = 1
