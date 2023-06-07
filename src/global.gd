@@ -110,20 +110,16 @@ func Save_SaveData():
 var change_res = false
 
 func Camera_Tick():
-	print(DisplayServer.window_get_mode())
 	if change_res:
-		print(savedata)
-		if savedata.options.video.border > 0:
-			var resolution = Vector2(960, 540)
-			get_viewport().content_scale_size = resolution
-			if DisplayServer.window_get_mode() == 0:
-				get_window().size = resolution
-		else:
-			var resolution = Vector2(640, 480)
-			get_viewport().content_scale_size = resolution
-			if DisplayServer.window_get_mode() == 0:
-				get_window().size = resolution
 		change_res = false
+		var resolution
+		if savedata.options.video.border > 0:
+			resolution = Vector2(960, 540)
+		else:
+			resolution = Vector2(640, 480)
+		get_viewport().content_scale_size = resolution
+		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_WINDOWED:
+			get_window().size = resolution
 
 # Fade
 var fadetype = false
