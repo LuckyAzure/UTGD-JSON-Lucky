@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 # Game version
-var version = "UTGD v0.01 (Alpha)"
+var version = "UTGD v0.04 (Alpha)"
 
 # Global Ready
 func _ready():
@@ -49,9 +49,9 @@ var default_data = {
 			"hard_mode": false
 		},
 		"video": {
-			"graphics": 0,
+			"display_mode": false,
+			"border": false,
 			"shader": false,
-			"border": 1
 		},
 		"audio": {
 			"music_volume": 0.5,
@@ -113,7 +113,7 @@ func Camera_Tick():
 	if change_res:
 		change_res = false
 		var resolution
-		if savedata.options.video.border > 0:
+		if savedata.options.video.border:
 			resolution = Vector2(960, 540)
 		else:
 			resolution = Vector2(640, 480)

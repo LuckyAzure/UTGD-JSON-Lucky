@@ -62,34 +62,32 @@ var trans_cooldown = 0
 
 func _process(delta):
 	if !selected:
-		if Input.is_action_just_pressed("Up"):
-			$CanvasLayer/Desc.modulate.a = 0
-			$Sounds/Switch.play(0)
-			if select > 0:
-				select -= 1
-				if creditsData[select][2]:
-					select -= 1
-				if select < 0:
-					select = creditsData.size() - 1
-			else:
-				select = creditsData.size() - 1
-		elif Input.is_action_just_pressed("Down"):
-			$CanvasLayer/Desc.modulate.a = 0
-			$Sounds/Switch.play(0)
-			if select < creditsData.size() - 1:
-				select += 1
-				if creditsData[select][2]:
-					select += 1
-			else:
-				select = 1
-		elif Input.is_action_just_pressed("Cancel"):
-			selected = true
-			trans_cooldown = 0.2
-			$Sounds/Switch.play(0)
+		processSelection(delta)
 	else:
-		trans_cooldown -= delta
-		if trans_cooldown < 0:
-			Global.change_scene("res://src/scenes/title/title.tscn")
+		processTransition(delta)
+
+func processSelection(delta):
+	if Input.is_action_just_pressed("Up"):
+		$CanvasLayer/Desc.modulate.a = 0
+		$Sounds/Switch.play(0)
+		select = (select - 1 + creditsData.size()) % creditsData.size()
+		while creditsData[select][2]:
+			select = (select - 1 + creditsData.size()) % creditsData.size()
+	elif Input.is_action_just_pressed("Down"):
+		$CanvasLayer/Desc.modulate.a = 0
+		$Sounds/Switch.play(0)
+		select = (select + 1) % creditsData.size()
+		while creditsData[select][2]:
+			select = (select + 1) % creditsData.size()
+	elif Input.is_action_just_pressed("Cancel"):
+		selected = true
+		trans_cooldown = 0.2
+		$Sounds/Switch.play(0)
 	
 	$CanvasLayer/Desc.text = creditsData[select][1]
 	$CanvasLayer/Desc.modulate.a = lerp($CanvasLayer/Desc.modulate.a, 1.0, 15.0 * delta)
+
+func processTransition(delta):
+	trans_cooldown -= delta
+	if trans_cooldown < 0:
+		Global.change_scene("res://src/scenes/title/title.tscn")
