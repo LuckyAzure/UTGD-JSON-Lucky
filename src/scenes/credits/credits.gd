@@ -61,21 +61,29 @@ var selected = false
 var trans_cooldown = 0
 
 func _process(delta):
+	$Soul.position = $Soul.position.lerp(Vector2(120.0,260), 15.0 * delta)
 	if !selected:
 		processSelection(delta)
 	else:
 		processTransition(delta)
 
+func SoulBounce(boolean):
+	var bounce = Vector2(8,24)
+	$CanvasLayer/Desc.modulate.a = 0
+	$Sounds/Switch.play(0)
+	if boolean:
+		$Soul.position -= bounce
+	else:
+		$Soul.position += bounce
+
 func processSelection(delta):
 	if Input.is_action_just_pressed("Up"):
-		$CanvasLayer/Desc.modulate.a = 0
-		$Sounds/Switch.play(0)
+		SoulBounce(true)
 		select = (select - 1 + creditsData.size()) % creditsData.size()
 		while creditsData[select][2]:
 			select = (select - 1 + creditsData.size()) % creditsData.size()
 	elif Input.is_action_just_pressed("Down"):
-		$CanvasLayer/Desc.modulate.a = 0
-		$Sounds/Switch.play(0)
+		SoulBounce(false)
 		select = (select + 1) % creditsData.size()
 		while creditsData[select][2]:
 			select = (select + 1) % creditsData.size()

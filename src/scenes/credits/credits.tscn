@@ -21,7 +21,7 @@ shader_parameter/grid_color = Color(0.431373, 0, 0.133333, 1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n8rvk"]
 shader = ExtResource("1_gdir4")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x35ik"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_efrn4"]
 shader = ExtResource("6_cusyx")
 shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/width = 2.0
@@ -66,8 +66,8 @@ vertical_alignment = 1
 
 [node name="Soul" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
-material = SubResource("ShaderMaterial_x35ik")
-position = Vector2(120, 260)
+material = SubResource("ShaderMaterial_efrn4")
+position = Vector2(-16, 260)
 texture = ExtResource("7_dl833")
 region_rect = Rect2(0, -2, 20, 20)
 

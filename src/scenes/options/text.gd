@@ -3,6 +3,7 @@ extends Label
 var order = 0
 var option_name = null
 var option = null
+var option_type = null
 
 var posx = 0.0
 var posy = 0.0
@@ -26,12 +27,13 @@ func _process(delta: float) -> void:
 		text += ": " + str(OFF_ON(Global.savedata["options"][optionaa][option]))
 
 func OFF_ON(variable) -> String:
+	var bool_strings = ["OFF","ON"]
+	match option_type:
+		"display":
+			bool_strings = ["Windowed","Fullscreen"]
 	if typeof(variable) == TYPE_BOOL:
-		if variable:
-			return "ON"
-		else:
-			return "OFF"
+		return bool_strings[int(variable)]
 	elif typeof(variable) == TYPE_FLOAT:
-		return str(variable)
+		return str(variable) + "%"
 	else:
 		return ""

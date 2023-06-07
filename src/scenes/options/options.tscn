@@ -45,7 +45,7 @@ color = Color(0, 0.0156863, 0.658824, 1)
 [node name="Soul" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
 material = SubResource("ShaderMaterial_lvcmj")
-position = Vector2(120, 260)
+position = Vector2(-16, 260)
 texture = ExtResource("7_citat")
 region_rect = Rect2(0, -2, 20, 20)
 

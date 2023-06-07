@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 # Game version
-var version = "UTGD v0.04 (Alpha)"
+var version = "UTGD v0.05 (Alpha)"
 
 # Global Ready
 func _ready():
@@ -11,6 +11,9 @@ func _ready():
 
 # Global Process
 func _process(delta):
+	if Input.is_action_just_pressed("Fullscreen"):
+		savedata.options.video.display_mode = !savedata.options.video.display_mode
+		DisplayServer.window_set_mode(int(savedata.options.video.display_mode) * 4)
 	# Check if fade effect is active
 	if fadetype:
 		# Perform transition tick
@@ -54,8 +57,8 @@ var default_data = {
 			"shader": false,
 		},
 		"audio": {
-			"music_volume": 0.5,
-			"sound_volume": 0.75,
+			"music_volume": 50,
+			"sound_volume": 75,
 			"ost_type": false
 		}
 	}
