@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dk6p62u7kxp5i"]
+[gd_scene load_steps=10 format=3 uid="uid://dk6p62u7kxp5i"]
 
 [ext_resource type="Script" path="res://src/scenes/title/title.gd" id="1_vgpnl"]
 [ext_resource type="Shader" path="res://src/shaders/outline.gdshader" id="1_w3bkh"]
@@ -7,7 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://creh4pd5ljd7k" path="res://iso/sounds/Select.wav" id="3_4hb7x"]
 [ext_resource type="Texture2D" uid="uid://cxj36n5drw1bj" path="res://iso/images/soul/Soul.png" id="4_nf3dw"]
 [ext_resource type="Shader" path="res://src/shaders/outlinesprite.gdshader" id="4_nf5d2"]
-[ext_resource type="AudioStream" uid="uid://cswbt26m5r8d7" path="res://iso/music/Psychosis..wav" id="8_oddi5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k6var"]
 shader = ExtResource("4_nf5d2")
@@ -156,7 +155,3 @@ theme_override_fonts/font = ExtResource("2_10fv8")
 theme_override_font_sizes/font_size = 16
 text = "Version"
 vertical_alignment = 2
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_oddi5")
-volume_db = -13.333
