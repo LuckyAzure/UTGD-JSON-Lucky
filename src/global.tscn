@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://jj0wj0pnjvdr"]
+
+[ext_resource type="Script" path="res://src/global.gd" id="1_4a7s0"]
+[ext_resource type="Shader" path="res://src/shaders/border.gdshader" id="2_lq1ur"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0e6j7"]
+shader = ExtResource("2_lq1ur")
+
+[node name="Global" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_4a7s0")
+
+[node name="Fade" type="ColorRect" parent="."]
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0, 0, 0, 1)
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+rect = Rect2(-160, -30, 960, 540)
+
+[node name="ColorRect" type="ColorRect" parent="BackBufferCopy"]
+visibility_layer = 2
+offset_left = -160.0
+offset_top = -30.0
+offset_right = 800.0
+offset_bottom = 510.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="BackBufferCopy"]
+visibility_layer = 2
+material = SubResource("ShaderMaterial_0e6j7")
+offset_right = 640.0
+offset_bottom = 480.0
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(320, 240)
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(-1, -1, 641, -1, 641, 481, -1, 481, -1, -1, 641, -1)
+width = 2.0

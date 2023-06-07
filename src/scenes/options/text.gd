@@ -1,12 +1,15 @@
 extends Label
 
-var posy = 0.0
+var order = 0
+var option_name = null
+
 var posx = 0.0
+var posy = 0.0
 
 func _process(delta):
 	var select = get_tree().get_current_scene().select
-	var pos = [0, 0]
-	if str(select) == name:
+	var pos = [0.0, 0.0]
+	if select == order:
 		pos[0] = 64.0
 		pos[1] = 0.0
 	else:

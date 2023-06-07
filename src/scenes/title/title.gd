@@ -9,6 +9,8 @@ var options = ["Reset","Continue","Extras","Options","Credits"]
 var nodes = {}
 
 func _ready():
+	select = Global.nextselect
+	$Soul.position.y = 256.0 + (select * 40.0)
 	$Version.text = Global.version
 	for option in options:
 		nodes[option] = get_node(option)
@@ -28,7 +30,20 @@ func _process(delta):
 	else:
 		trans_cooldown -= delta
 		if trans_cooldown < 0:
-			Global.change_scene("res://src/scenes/credits/credits.tscn")
+			var scene = "res://src/scenes/credits/credits.tscn"
+			Global.nextselect = select
+			match select:
+				0:
+					scene = "res://src/scenes/credits/credits.tscn"
+				1:
+					scene = "res://src/scenes/credits/credits.tscn"
+				2:
+					scene = "res://src/scenes/credits/credits.tscn"
+				3:
+					scene = "res://src/scenes/options/options.tscn"
+				4:
+					scene = "res://src/scenes/credits/credits.tscn"
+			Global.change_scene(scene)
 
 	$Soul.position.y = lerp($Soul.position.y, 256.0 + (select * 40.0), 10.0 * delta)
 
