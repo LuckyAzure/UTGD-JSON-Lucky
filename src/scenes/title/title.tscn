@@ -1,20 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://dk6p62u7kxp5i"]
+[gd_scene load_steps=9 format=3 uid="uid://dk6p62u7kxp5i"]
 
 [ext_resource type="Script" path="res://src/scenes/title/title.gd" id="1_vgpnl"]
 [ext_resource type="Shader" path="res://src/shaders/outline.gdshader" id="1_w3bkh"]
 [ext_resource type="FontFile" uid="uid://dk56m0bqtpgj4" path="res://iso/fonts/determinationmonoweb-webfont.ttf" id="2_10fv8"]
 [ext_resource type="AudioStream" uid="uid://cmofvrlunrq53" path="res://iso/sounds/select_delayed.wav" id="2_ej6et"]
 [ext_resource type="AudioStream" uid="uid://creh4pd5ljd7k" path="res://iso/sounds/Select.wav" id="3_4hb7x"]
-[ext_resource type="Texture2D" uid="uid://cxj36n5drw1bj" path="res://iso/images/soul/Soul.png" id="4_nf3dw"]
-[ext_resource type="Shader" path="res://src/shaders/outlinesprite.gdshader" id="4_nf5d2"]
+[ext_resource type="Texture2D" uid="uid://gxbvnvca3i30" path="res://iso/images/battle-engine/soul.png" id="5_ireai"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k6var"]
-shader = ExtResource("4_nf5d2")
-shader_parameter/color = Color(0, 0, 0, 1)
-shader_parameter/width = 2.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbm8g"]
+atlas = ExtResource("5_ireai")
+region = Rect2(0, 0, 20, 20)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g0u35"]
 shader = ExtResource("1_w3bkh")
@@ -134,10 +129,9 @@ vertical_alignment = 1
 
 [node name="Soul" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
-material = SubResource("ShaderMaterial_k6var")
 position = Vector2(42, 256)
-texture = ExtResource("4_nf3dw")
-region_rect = Rect2(0, -2, 20, 20)
+texture = SubResource("AtlasTexture_dbm8g")
+region_rect = Rect2(0, 0, 18, 18)
 
 [node name="Version" type="Label" parent="."]
 material = SubResource("ShaderMaterial_g0u35")

@@ -1,12 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://d4gnclt6tcgkk"]
+[gd_scene load_steps=9 format=3 uid="uid://d4gnclt6tcgkk"]
 
 [ext_resource type="Script" path="res://src/scenes/options/options.gd" id="1_3kqsa"]
 [ext_resource type="Shader" path="res://src/scenes/credits/effect.gdshader" id="1_ydd8m"]
 [ext_resource type="AudioStream" uid="uid://cmofvrlunrq53" path="res://iso/sounds/select_delayed.wav" id="2_ogkvj"]
 [ext_resource type="AudioStream" uid="uid://creh4pd5ljd7k" path="res://iso/sounds/Select.wav" id="3_o0kpq"]
 [ext_resource type="FontFile" uid="uid://dk56m0bqtpgj4" path="res://iso/fonts/determinationmonoweb-webfont.ttf" id="5_xi5vn"]
-[ext_resource type="Shader" path="res://src/shaders/outlinesprite.gdshader" id="6_s8bwy"]
-[ext_resource type="Texture2D" uid="uid://cxj36n5drw1bj" path="res://iso/images/soul/Soul.png" id="7_citat"]
+[ext_resource type="Texture2D" uid="uid://gxbvnvca3i30" path="res://iso/images/battle-engine/soul.png" id="5_ykb8v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_id8y8"]
 shader = ExtResource("1_ydd8m")
@@ -17,13 +16,9 @@ shader_parameter/fov = 0.01
 shader_parameter/background_color = Color(0, 0, 0, 1)
 shader_parameter/grid_color = Color(0.431373, 0, 0.133333, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lvcmj"]
-shader = ExtResource("6_s8bwy")
-shader_parameter/color = Color(0, 0, 0, 1)
-shader_parameter/width = 2.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tl3r"]
+atlas = ExtResource("5_ykb8v")
+region = Rect2(0, 0, 20, 20)
 
 [node name="Options" type="Node2D"]
 script = ExtResource("1_3kqsa")
@@ -44,9 +39,8 @@ color = Color(0, 0.0156863, 0.658824, 1)
 
 [node name="Soul" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
-material = SubResource("ShaderMaterial_lvcmj")
 position = Vector2(-16, 260)
-texture = ExtResource("7_citat")
+texture = SubResource("AtlasTexture_8tl3r")
 region_rect = Rect2(0, -2, 20, 20)
 
 [node name="CanvasLayer" type="Node2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://1jqtk4kqt7p4"]
+[gd_scene load_steps=11 format=3 uid="uid://1jqtk4kqt7p4"]
 
 [ext_resource type="Shader" path="res://src/shaders/outline.gdshader" id="1_gdir4"]
 [ext_resource type="Script" path="res://src/scenes/credits/credits.gd" id="1_hdxpa"]
@@ -6,8 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cmofvrlunrq53" path="res://iso/sounds/select_delayed.wav" id="2_l2cte"]
 [ext_resource type="AudioStream" uid="uid://creh4pd5ljd7k" path="res://iso/sounds/Select.wav" id="3_fayq5"]
 [ext_resource type="Shader" path="res://src/scenes/credits/effect.gdshader" id="4_adk3l"]
-[ext_resource type="Shader" path="res://src/shaders/outlinesprite.gdshader" id="6_cusyx"]
-[ext_resource type="Texture2D" uid="uid://cxj36n5drw1bj" path="res://iso/images/soul/Soul.png" id="7_dl833"]
+[ext_resource type="Texture2D" uid="uid://gxbvnvca3i30" path="res://iso/images/battle-engine/soul.png" id="7_qtdw6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c5yjv"]
 shader = ExtResource("4_adk3l")
@@ -21,13 +20,9 @@ shader_parameter/grid_color = Color(0.431373, 0, 0.133333, 1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n8rvk"]
 shader = ExtResource("1_gdir4")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_efrn4"]
-shader = ExtResource("6_cusyx")
-shader_parameter/color = Color(0, 0, 0, 1)
-shader_parameter/width = 2.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8r33"]
+atlas = ExtResource("7_qtdw6")
+region = Rect2(0, 0, 20, 20)
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_hdxpa")
@@ -66,9 +61,8 @@ vertical_alignment = 1
 
 [node name="Soul" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
-material = SubResource("ShaderMaterial_efrn4")
 position = Vector2(-16, 260)
-texture = ExtResource("7_dl833")
+texture = SubResource("AtlasTexture_g8r33")
 region_rect = Rect2(0, -2, 20, 20)
 
 [node name="CanvasLayer" type="Node2D" parent="."]

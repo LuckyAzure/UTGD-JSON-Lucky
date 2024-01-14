@@ -152,6 +152,7 @@ func processSubOptions(delta):
 		# Toggle display mode, play sound
 		Global.savedata["options"][OptionsData[options][0].to_lower()][option] = !Global.savedata["options"][OptionsData[options][0].to_lower()][option]
 		DisplayServer.window_set_mode(int(Global.savedata.options.video.display_mode) * 4)
+		Global.change_res = true
 		$Sounds/Switch.play(0)
 	if Input.is_action_just_pressed("Cancel"):
 		# Reset variables, create clones, play sound, reset visual element

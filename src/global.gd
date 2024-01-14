@@ -14,6 +14,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("Fullscreen"):
 		savedata.options.video.display_mode = !savedata.options.video.display_mode
 		DisplayServer.window_set_mode(int(savedata.options.video.display_mode) * 4)
+		Global.change_res = true
 	# Check if fade effect is active
 	if fadetype:
 		# Perform transition tick

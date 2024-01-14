@@ -25,7 +25,6 @@ var creditsData = [
 	["Leon Arnott", "Programming help and Mac OS X porting.", false],
 	["Mike Reid", "Guest designer for Glyde.", false],
 	["--Special Thanks--", null, true],
-	["xAlex(UnderTem)", "Alpha tester.", false],
 	["UNSTOP4BLE", "Cool guy I played cod with on ps3.", false],
 	["???", "", false],
 	["???", "", false],
