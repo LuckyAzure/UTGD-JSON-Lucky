@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5vl8t0p7chvb"]
+[gd_scene load_steps=15 format=3 uid="uid://c5vl8t0p7chvb"]
 
 [ext_resource type="Texture2D" uid="uid://dflmpa46l1lvf" path="res://iso/images/overworld/placeholder.png" id="1_jb0lb"]
 [ext_resource type="PackedScene" uid="uid://bjlgypgsu3ii6" path="res://src/overworld/player.tscn" id="1_t8yc7"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://dk56m0bqtpgj4" path="res://iso/fonts/determinationmonoweb-webfont.ttf" id="2_1ng7r"]
 [ext_resource type="FontFile" uid="uid://bsj4mtw42ldjb" path="res://iso/fonts/EXCUTNPTS_edited.ttf" id="3_hu8ol"]
 [ext_resource type="Texture2D" uid="uid://w2154xal7c34" path="res://iso/images/overworld/misc.png" id="4_1b5gc"]
+[ext_resource type="PackedScene" uid="uid://c7fp4vjd5kbko" path="res://assets/chars/sans/sans.tscn" id="7_lisv6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ivkjf"]
 atlas = ExtResource("2_0jc72")
@@ -135,3 +136,6 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_t8yc7")]
 position = Vector2(320, 240)
+
+[node name="Sans" parent="." instance=ExtResource("7_lisv6")]
+position = Vector2(439, 185)

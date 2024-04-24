@@ -157,6 +157,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_gb04w")
 
 [node name="Frames" type="AnimatedSprite2D" parent="."]
