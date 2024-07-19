@@ -4,7 +4,7 @@
 [ext_resource type="Shader" path="res://src/shaders/outline.gdshader" id="1_w3bkh"]
 [ext_resource type="FontFile" uid="uid://dk56m0bqtpgj4" path="res://iso/fonts/determinationmonoweb-webfont.ttf" id="2_10fv8"]
 [ext_resource type="AudioStream" uid="uid://cmofvrlunrq53" path="res://iso/sounds/select_delayed.wav" id="2_ej6et"]
-[ext_resource type="AudioStream" uid="uid://creh4pd5ljd7k" path="res://iso/sounds/Select.wav" id="3_4hb7x"]
+[ext_resource type="AudioStream" uid="uid://creh4pd5ljd7k" path="res://iso/sounds/accept.wav" id="3_4hb7x"]
 [ext_resource type="Texture2D" uid="uid://gxbvnvca3i30" path="res://iso/images/battle-engine/soul.png" id="5_ireai"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dbm8g"]

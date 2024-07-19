@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://src/scenes/credits/credits.gd" id="1_hdxpa"]
 [ext_resource type="FontFile" uid="uid://dk56m0bqtpgj4" path="res://iso/fonts/determinationmonoweb-webfont.ttf" id="2_f77a3"]
 [ext_resource type="AudioStream" uid="uid://cmofvrlunrq53" path="res://iso/sounds/select_delayed.wav" id="2_l2cte"]
-[ext_resource type="AudioStream" uid="uid://creh4pd5ljd7k" path="res://iso/sounds/Select.wav" id="3_fayq5"]
+[ext_resource type="AudioStream" uid="uid://creh4pd5ljd7k" path="res://iso/sounds/accept.wav" id="3_fayq5"]
 [ext_resource type="Shader" path="res://src/scenes/credits/effect.gdshader" id="4_adk3l"]
 [ext_resource type="Texture2D" uid="uid://gxbvnvca3i30" path="res://iso/images/battle-engine/soul.png" id="7_qtdw6"]
 
