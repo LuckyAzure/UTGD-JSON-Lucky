@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=3 uid="uid://1jqtk4kqt7p4"]
+
+[ext_resource type="Shader" path="res://src/shaders/outline.gdshader" id="1_gdir4"]
+[ext_resource type="Script" path="res://src/scenes/interfaces/credits/credits.gd" id="1_hdxpa"]
+[ext_resource type="FontFile" uid="uid://dk56m0bqtpgj4" path="res://assets/fonts/determinationmonoweb-webfont.ttf" id="2_f77a3"]
+[ext_resource type="AudioStream" uid="uid://cmofvrlunrq53" path="res://assets/sounds/select_delayed.wav" id="2_l2cte"]
+[ext_resource type="AudioStream" uid="uid://creh4pd5ljd7k" path="res://assets/sounds/accept.wav" id="3_fayq5"]
+[ext_resource type="Shader" path="res://src/scenes/interfaces/credits/effect.gdshader" id="4_adk3l"]
+[ext_resource type="Texture2D" uid="uid://gxbvnvca3i30" path="res://src/scenes/engines/battle/images/soul.png" id="7_qtdw6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c5yjv"]
+shader = ExtResource("4_adk3l")
+shader_parameter/battery = 1.0
+shader_parameter/anchor = -0.5
+shader_parameter/speed_scale = 1.0
+shader_parameter/fov = 0.01
+shader_parameter/background_color = Color(0, 0, 0, 1)
+shader_parameter/grid_color = Color(0.431373, 0, 0.133333, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n8rvk"]
+shader = ExtResource("1_gdir4")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8r33"]
+atlas = ExtResource("7_qtdw6")
+region = Rect2(0, 0, 20, 20)
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_hdxpa")
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Switch" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("2_l2cte")
+
+[node name="Select" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("3_fayq5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_c5yjv")
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0, 0.0156863, 0.658824, 1)
+
+[node name="Credits" type="Label" parent="."]
+material = SubResource("ShaderMaterial_n8rvk")
+offset_left = 464.0
+offset_right = 552.0
+offset_bottom = 36.0
+scale = Vector2(2, 2)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("2_f77a3")
+theme_override_font_sizes/font_size = 16
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Soul" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-16, 260)
+texture = SubResource("AtlasTexture_g8r33")
+region_rect = Rect2(0, -2, 20, 20)
+
+[node name="CanvasLayer" type="Node2D" parent="."]
+z_index = 256
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+offset_top = 341.0
+offset_right = 640.0
+offset_bottom = 440.0
+color = Color(0, 0, 0, 0.698039)
+
+[node name="Desc" type="Label" parent="CanvasLayer"]
+offset_left = 16.0
+offset_top = 356.0
+offset_right = 323.0
+offset_bottom = 385.0
+scale = Vector2(2, 2)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 4
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_f77a3")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

@@ -1,0 +1,123 @@
+[gd_scene load_steps=14 format=3 uid="uid://c7fp4vjd5kbko"]
+
+[ext_resource type="Texture2D" uid="uid://dtohi25uwtijs" path="res://assets/battle/chars/sans/images/sprite.png" id="1_1pf64"]
+[ext_resource type="Script" path="res://assets/battle/chars/sans/sans.gd" id="1_wvny8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6imef"]
+atlas = ExtResource("1_1pf64")
+region = Rect2(0, 81, 51, 27)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8bilh"]
+load_path = "res://.godot/imported/sprite.png-92b97061e6eec46a5dfbd2cfae63bf8d.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70ql5"]
+atlas = SubResource("CompressedTexture2D_8bilh")
+region = Rect2(0, 50, 35, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sl4hh"]
+atlas = SubResource("CompressedTexture2D_8bilh")
+region = Rect2(37, 50, 19, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tco7"]
+atlas = SubResource("CompressedTexture2D_8bilh")
+region = Rect2(58, 50, 47, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s02kl"]
+atlas = SubResource("CompressedTexture2D_8bilh")
+region = Rect2(46, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpnf6"]
+atlas = SubResource("CompressedTexture2D_8bilh")
+region = Rect2(53, 76, 55, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcqbo"]
+atlas = SubResource("CompressedTexture2D_8bilh")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pghxy"]
+atlas = SubResource("CompressedTexture2D_8bilh")
+region = Rect2(0, 32, 33, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gopsd"]
+atlas = SubResource("CompressedTexture2D_8bilh")
+region = Rect2(35, 32, 9, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2ba1"]
+atlas = SubResource("CompressedTexture2D_8bilh")
+region = Rect2(0, 0, 31, 30)
+
+[node name="Sans2" type="Marker2D"]
+position = Vector2(320, 240)
+scale = Vector2(2, 2)
+script = ExtResource("1_wvny8")
+
+[node name="Legs" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_6imef")
+centered = false
+offset = Vector2(-26, -25)
+
+[node name="Pos" type="Marker2D" parent="Legs"]
+position = Vector2(0, -28)
+
+[node name="Torso" type="Sprite2D" parent="."]
+position = Vector2(0, -28)
+texture = SubResource("AtlasTexture_70ql5")
+centered = false
+offset = Vector2(-17, -23)
+
+[node name="Kint" type="Sprite2D" parent="Torso"]
+texture = SubResource("AtlasTexture_sl4hh")
+centered = false
+offset = Vector2(-8, -4)
+
+[node name="Cape" type="Sprite2D" parent="Torso"]
+z_index = -2
+position = Vector2(0, 4)
+texture = SubResource("AtlasTexture_8tco7")
+centered = false
+offset = Vector2(-23, 0)
+
+[node name="Left Shoulder" type="Sprite2D" parent="Torso"]
+position = Vector2(-15, -13)
+texture = SubResource("AtlasTexture_s02kl")
+centered = false
+offset = Vector2(-13, -10)
+
+[node name="Arm" type="Sprite2D" parent="Torso/Left Shoulder"]
+z_index = -1
+position = Vector2(-3, 5)
+texture = SubResource("AtlasTexture_xpnf6")
+centered = false
+offset = Vector2(-53, -37)
+
+[node name="Right Shoulder" type="Sprite2D" parent="Torso"]
+position = Vector2(16, -13)
+texture = SubResource("AtlasTexture_jcqbo")
+centered = false
+offset = Vector2(-3, -10)
+
+[node name="Arm" type="Sprite2D" parent="Torso/Right Shoulder"]
+position = Vector2(3, 5)
+scale = Vector2(-1, 1)
+texture = SubResource("AtlasTexture_xpnf6")
+centered = false
+offset = Vector2(-53, -37)
+
+[node name="Cape2" type="Sprite2D" parent="Torso"]
+position = Vector2(0, -23)
+texture = SubResource("AtlasTexture_pghxy")
+centered = false
+offset = Vector2(-16, -1)
+
+[node name="Kint" type="Sprite2D" parent="Torso/Cape2"]
+z_index = -1
+position = Vector2(-14, -2)
+texture = SubResource("AtlasTexture_gopsd")
+centered = false
+offset = Vector2(-8, -11)
+
+[node name="Head" type="Sprite2D" parent="Torso"]
+position = Vector2(0, -19)
+texture = SubResource("AtlasTexture_r2ba1")
+centered = false
+offset = Vector2(-15, -28)

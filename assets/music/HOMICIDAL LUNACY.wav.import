@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwpxe4b84kifd"
+path="res://.godot/imported/HOMICIDAL LUNACY.wav-154408e3cd36fe93adc94a898b944385.sample"
+
+[deps]
+
+source_file="res://assets/music/HOMICIDAL LUNACY.wav"
+dest_files=["res://.godot/imported/HOMICIDAL LUNACY.wav-154408e3cd36fe93adc94a898b944385.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

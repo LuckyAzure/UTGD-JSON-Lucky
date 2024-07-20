@@ -1,0 +1,37 @@
+{
+    "name": "Sans",
+    "stats": {
+        "HP": 1,
+        "Max_HP": 1
+    },
+    "flags": [
+        "DODGE"
+    ],
+	"dialogues": [
+		[0, ["text0", "text1", "text2"]],
+		[3, ["text3", "text4"]],
+		[4, ["text5", "text6", "text7", "text8"]],
+		[6, ["text9"]],
+		[7, ["text10", "yes"]]
+	],
+    "act_check": {
+        "ATK": 1,
+        "DEF": 1,
+        "text": "* The easiest enemy. Can only deal 1 damage."
+    },
+    "acts": [
+        {
+            "name": "test0",
+            "act_dialogues": [
+                "* text_0",
+                "* text_1",
+                "* text_2"
+            ],
+            "dialogues": [
+                "text0",
+                "text1"
+            ],
+            "mode": "SKIP"
+        }
+    ]
+}

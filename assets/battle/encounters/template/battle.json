@@ -1,0 +1,38 @@
+{
+	"name":"Template",
+	"flags":[
+		"NO_FLEE",
+		"GENOCIDE"
+	],
+	"chars":[
+		{
+			"name":"sans",
+			"position":[
+				320,
+				200
+			]
+		}
+	],
+	"attacks":
+	{
+		"normal":
+		[
+			"attack0.json",
+			"attack1.json"
+		],
+		"heal":
+		[
+			"heal_attack0.json"
+		]
+		"special":
+		[
+			"special_attack0.json"
+		]
+	},
+	"dialogues":[
+		[0, "* test0"],
+		[5, "* test1"],
+		[7, "* test2"],
+		[11, "* test3"]
+	]
+}

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://5bcl7o20axic"]
+
+[ext_resource type="Shader" path="res://src/shaders/outline.gdshader" id="1_36o1s"]
+[ext_resource type="FontFile" uid="uid://dk56m0bqtpgj4" path="res://assets/fonts/determinationmonoweb-webfont.ttf" id="2_3qw15"]
+[ext_resource type="Script" path="res://src/scenes/interfaces/options/text.gd" id="3_ilhxt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mvfxd"]
+shader = ExtResource("1_36o1s")
+
+[node name="Text" type="Label"]
+material = SubResource("ShaderMaterial_mvfxd")
+offset_right = 128.0
+offset_bottom = 20.0
+scale = Vector2(2, 2)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("2_3qw15")
+theme_override_font_sizes/font_size = 16
+text = "Text"
+vertical_alignment = 1
+script = ExtResource("3_ilhxt")
