@@ -1,0 +1,90 @@
+[gd_scene load_steps=12 format=3 uid="uid://bvc8so2cp1vtc"]
+
+[ext_resource type="Texture2D" uid="uid://psejf8exoxpf" path="res://src/scenes/engines/battle/images/texture.png" id="1_67jef"]
+[ext_resource type="Script" path="res://src/scenes/engines/battle/scripts/HUD/act.gd" id="2_brw8n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_030b1"]
+atlas = ExtResource("1_67jef")
+region = Rect2(116, 0, 114, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pr12"]
+atlas = ExtResource("1_67jef")
+region = Rect2(116, 48, 114, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aatf3"]
+atlas = ExtResource("1_67jef")
+region = Rect2(0, 0, 114, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttl3l"]
+atlas = ExtResource("1_67jef")
+region = Rect2(0, 48, 114, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53s5p"]
+atlas = ExtResource("1_67jef")
+region = Rect2(232, 0, 114, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gthmh"]
+atlas = ExtResource("1_67jef")
+region = Rect2(232, 48, 114, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ib0j"]
+atlas = ExtResource("1_67jef")
+region = Rect2(348, 0, 114, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2xgw"]
+atlas = ExtResource("1_67jef")
+region = Rect2(348, 48, 114, 46)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xxxpt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_030b1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pr12")
+}],
+"loop": false,
+"name": &"Act",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aatf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttl3l")
+}],
+"loop": false,
+"name": &"Fight",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53s5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gthmh")
+}],
+"loop": false,
+"name": &"Items",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ib0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2xgw")
+}],
+"loop": false,
+"name": &"Mercy",
+"speed": 0.0
+}]
+
+[node name="Act" type="AnimatedSprite2D"]
+texture_filter = 1
+texture_repeat = 1
+sprite_frames = SubResource("SpriteFrames_xxxpt")
+animation = &"Fight"
+script = ExtResource("2_brw8n")

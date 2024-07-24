@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://bre7rgx3fn7oi"]
+
+[ext_resource type="Script" path="res://src/scenes/engines/battle/scripts/Box/Box.gd" id="1_1hj7u"]
+
+[node name="Box" type="StaticBody2D"]
+position = Vector2(320, 320)
+script = ExtResource("1_1hj7u")
+
+[node name="Back" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="Outlines" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, 0, 0, 0)
+closed = true
+width = 9.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Lines" type="Line2D" parent="."]
+points = PackedVector2Array(285, -68, 285, 67, -286, 67, -286, -68)
+closed = true
+width = 5.0
+
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0)
+
+[node name="Collision2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0)

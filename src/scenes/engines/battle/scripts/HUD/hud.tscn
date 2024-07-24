@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c11ast5gq162w"]
+
+[ext_resource type="Script" path="res://src/scenes/engines/battle/scripts/HUD/HUD.gd" id="1_4vqm4"]
+
+[node name="HUD" type="Node2D"]
+position = Vector2(320, 453)
+script = ExtResource("1_4vqm4")

@@ -84,7 +84,7 @@ func Load_SaveData():
 		var file_access = FileAccess.open(savedata_path, FileAccess.READ)
 		
 		# Check if the file exists and can be read
-		if file_access != null and file_access.file_exists(savedata_path):
+		if file_access != null and FileAccess.file_exists(savedata_path):
 			var json_data = file_access.get_as_text()
 			file_access.close()
 			var json = JSON.new()

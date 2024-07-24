@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://kfu5me8hk43s"]
+
+[ext_resource type="Script" path="res://src/scenes/engines/battle/battle.gd" id="1_up7e7"]
+[ext_resource type="Texture2D" uid="uid://brlo2udtubveo" path="res://src/scenes/engines/battle/images/placeholder.png" id="1_vu1h2"]
+[ext_resource type="PackedScene" uid="uid://c11ast5gq162w" path="res://src/scenes/engines/battle/scripts/HUD/hud.tscn" id="3_olj5x"]
+[ext_resource type="PackedScene" uid="uid://b7cw0tu8ni0gi" path="res://src/scenes/engines/battle/scripts/Status/status.tscn" id="4_q3xd2"]
+[ext_resource type="PackedScene" uid="uid://bre7rgx3fn7oi" path="res://src/scenes/engines/battle/scripts/Box/box.tscn" id="5_0cuhi"]
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_up7e7")
+
+[node name="Placeholder" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.486275)
+texture = ExtResource("1_vu1h2")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(1, 1, 1, 0.184314)
+
+[node name="HUD" parent="." instance=ExtResource("3_olj5x")]
+
+[node name="Status" parent="." instance=ExtResource("4_q3xd2")]
+
+[node name="Box" parent="." instance=ExtResource("5_0cuhi")]

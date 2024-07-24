@@ -1,0 +1,138 @@
+[gd_scene load_steps=10 format=3 uid="uid://b7cw0tu8ni0gi"]
+
+[ext_resource type="Shader" path="res://src/shaders/outline.gdshader" id="1_yb8rj"]
+[ext_resource type="FontFile" uid="uid://dyebg3aqbbu6t" path="res://assets/fonts/Mars_Needs_Cunnilingus.ttf" id="2_100dm"]
+[ext_resource type="Texture2D" uid="uid://psejf8exoxpf" path="res://src/scenes/engines/battle/images/texture.png" id="3_qqiet"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_37jto"]
+shader = ExtResource("1_yb8rj")
+
+[sub_resource type="FontVariation" id="FontVariation_tx4cj"]
+base_font = ExtResource("2_100dm")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aiibm"]
+atlas = ExtResource("3_qqiet")
+region = Rect2(0, 96, 27, 14)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f687g"]
+bg_color = Color(1, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02g1s"]
+bg_color = Color(1, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g30r5"]
+bg_color = Color(1, 1, 0, 1)
+
+[node name="Status" type="Node2D"]
+position = Vector2(320, 410)
+
+[node name="Name" type="Label" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_37jto")
+offset_left = -290.0
+offset_top = -10.0
+offset_right = -215.0
+offset_bottom = 14.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = SubResource("FontVariation_tx4cj")
+theme_override_font_sizes/font_size = 24
+text = "CHARA"
+
+[node name="LV" type="Label" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_37jto")
+offset_left = -188.0
+offset_top = -10.0
+offset_right = -158.0
+offset_bottom = 14.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = SubResource("FontVariation_tx4cj")
+theme_override_font_sizes/font_size = 24
+text = "LV"
+
+[node name="LV_Number" type="Label" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_37jto")
+offset_left = -149.0
+offset_top = -10.0
+offset_right = -113.0
+offset_bottom = 14.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = SubResource("FontVariation_tx4cj")
+theme_override_font_sizes/font_size = 24
+text = "1"
+
+[node name="HP" type="Node2D" parent="."]
+
+[node name="Text" type="Sprite2D" parent="HP"]
+position = Vector2(-78, -7)
+texture = SubResource("AtlasTexture_aiibm")
+centered = false
+
+[node name="Bar" type="Node2D" parent="HP"]
+
+[node name="Outline" type="ColorRect" parent="HP/Bar"]
+offset_left = -47.0
+offset_top = -12.0
+offset_right = -18.0
+offset_bottom = 13.0
+color = Color(0, 0, 0, 1)
+
+[node name="Back" type="ColorRect" parent="HP/Bar"]
+offset_left = -45.0
+offset_top = -10.0
+offset_right = -20.0
+offset_bottom = 11.0
+color = Color(1, 0, 0, 1)
+
+[node name="Special" type="ProgressBar" parent="HP/Bar"]
+texture_filter = 1
+offset_left = -45.0
+offset_top = -10.0
+offset_right = -20.0
+offset_bottom = 11.0
+theme_override_styles/background = SubResource("StyleBoxFlat_f687g")
+theme_override_styles/fill = SubResource("StyleBoxFlat_02g1s")
+max_value = 20.0
+value = 15.0
+show_percentage = false
+
+[node name="Bar" type="ProgressBar" parent="HP/Bar"]
+texture_filter = 1
+offset_left = -45.0
+offset_top = -10.0
+offset_right = -20.0
+offset_bottom = 11.0
+theme_override_styles/background = SubResource("StyleBoxFlat_f687g")
+theme_override_styles/fill = SubResource("StyleBoxFlat_g30r5")
+max_value = 20.0
+value = 10.0
+show_percentage = false
+
+[node name="Number" type="Label" parent="HP"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_37jto")
+offset_left = -6.0
+offset_top = -10.0
+offset_right = 37.0
+offset_bottom = 14.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = SubResource("FontVariation_tx4cj")
+theme_override_font_sizes/font_size = 24
+text = "20 / 20"
