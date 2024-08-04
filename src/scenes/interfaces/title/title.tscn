@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/scenes/interfaces/title/title.gd" id="1_vgpnl"]
 [ext_resource type="Shader" path="res://src/shaders/outline.gdshader" id="1_w3bkh"]
 [ext_resource type="FontFile" uid="uid://dk56m0bqtpgj4" path="res://assets/fonts/determinationmonoweb-webfont.ttf" id="2_10fv8"]
-[ext_resource type="AudioStream" uid="uid://cmofvrlunrq53" path="res://assets/sounds/select_delayed.wav" id="2_ej6et"]
+[ext_resource type="AudioStream" uid="uid://cmofvrlunrq53" path="res://assets/sounds/select.wav" id="2_ej6et"]
 [ext_resource type="AudioStream" uid="uid://creh4pd5ljd7k" path="res://assets/sounds/accept.wav" id="3_4hb7x"]
 [ext_resource type="Texture2D" uid="uid://gxbvnvca3i30" path="res://src/scenes/engines/battle/images/soul.png" id="5_ireai"]
 

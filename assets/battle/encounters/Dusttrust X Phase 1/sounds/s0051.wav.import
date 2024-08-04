@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b370fvvxkmbe5"
+path="res://.godot/imported/s0051.wav-d3f7777023315ca0201f06f4d3d47f30.sample"
+
+[deps]
+
+source_file="res://assets/battle/encounters/Dusttrust X Phase 1/sounds/s0051.wav"
+dest_files=["res://.godot/imported/s0051.wav-d3f7777023315ca0201f06f4d3d47f30.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,5 +1,6 @@
 {
     "name": "Sans",
+	"node": "sans.tscn",
     "stats": {
         "HP": 1,
         "Max_HP": 1

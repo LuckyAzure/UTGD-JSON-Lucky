@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="UNDERTALE"
+config/version="UTGD v0.21 (Alpha)"
 run/main_scene="res://src/scenes/interfaces/title/title.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 run/max_fps=240
@@ -27,12 +28,14 @@ driver/output_latency=1
 [autoload]
 
 Global="*res://src/global.tscn"
+Battle="*res://src/scenes/engines/battle/scripts/global.gd"
 
 [display]
 
 window/size/viewport_width=640
 window/size/viewport_height=480
 window/stretch/mode="viewport"
+window/per_pixel_transparency/allowed=true
 
 [input]
 
@@ -110,6 +113,6 @@ Quit={
 textures/canvas_textures/default_texture_filter=3
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=true
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
-2d/snap/snap_2d_transforms_to_pixel=true
-2d/snap/snap_2d_vertices_to_pixel=true
+mesh_lod/lod_change/threshold_pixels=0.0

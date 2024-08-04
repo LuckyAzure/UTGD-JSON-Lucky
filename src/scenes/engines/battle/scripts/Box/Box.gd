@@ -1,9 +1,13 @@
 extends StaticBody2D
 
-func _process(delta):
-	tick_box()
+func _ready():
+	Battle.Box = self
 
-func tick_box():
+func _process(_delta):
+	tick_box()
+	#rotation += delta * 0.1
+
+func tick_box(): 
 	$Outlines.points = $Lines.points
 	$Back.polygon = $Lines.points
 	

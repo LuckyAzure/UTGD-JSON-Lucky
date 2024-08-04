@@ -1,0 +1,83 @@
+[gd_scene load_steps=16 format=3 uid="uid://kfu5me8hk43s"]
+
+[ext_resource type="Script" path="res://src/scenes/engines/battle/battle.gd" id="1_up7e7"]
+[ext_resource type="Texture2D" uid="uid://bjn2q17xpcykd" path="res://src/scenes/engines/battle/images/yapirusplaceholder.png" id="2_b53d2"]
+[ext_resource type="Script" path="res://src/scenes/engines/battle/scripts/Encounters/Encounters.gd" id="3_i51g0"]
+[ext_resource type="PackedScene" uid="uid://c11ast5gq162w" path="res://src/scenes/engines/battle/scripts/HUD/hud.tscn" id="3_olj5x"]
+[ext_resource type="PackedScene" uid="uid://b7cw0tu8ni0gi" path="res://src/scenes/engines/battle/scripts/Status/status.tscn" id="4_q3xd2"]
+[ext_resource type="PackedScene" uid="uid://bre7rgx3fn7oi" path="res://src/scenes/engines/battle/scripts/Box/box.tscn" id="5_0cuhi"]
+[ext_resource type="Script" path="res://src/scenes/engines/battle/scripts/Status/status.gd" id="5_djx68"]
+[ext_resource type="Script" path="res://src/scenes/engines/battle/scripts/heart/Navigation.gd" id="6_fmuk7"]
+[ext_resource type="Texture2D" uid="uid://gxbvnvca3i30" path="res://src/scenes/engines/battle/images/soul.png" id="7_fqdb1"]
+[ext_resource type="AudioStream" uid="uid://cmofvrlunrq53" path="res://assets/sounds/select.wav" id="8_0rdin"]
+[ext_resource type="Script" path="res://src/scenes/engines/battle/scripts/Sounds/Sounds.gd" id="9_d1mom"]
+[ext_resource type="AudioStream" uid="uid://creh4pd5ljd7k" path="res://assets/sounds/accept.wav" id="9_fsq6v"]
+[ext_resource type="AudioStream" uid="uid://c21m5oesbqemk" path="res://assets/sounds/text.wav" id="10_f1uh5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vopmp"]
+atlas = ExtResource("7_fqdb1")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fabvt"]
+custom_solver_bias = 1.0
+radius = 8.0
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_up7e7")
+
+[node name="Placeholder" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.486275)
+texture = ExtResource("2_b53d2")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(1, 1, 1, 0.184314)
+metadata/_edit_lock_ = true
+
+[node name="Encounters" type="Node" parent="."]
+script = ExtResource("3_i51g0")
+
+[node name="HUD" parent="." instance=ExtResource("3_olj5x")]
+
+[node name="Status" parent="." instance=ExtResource("4_q3xd2")]
+script = ExtResource("5_djx68")
+
+[node name="Box" parent="." instance=ExtResource("5_0cuhi")]
+
+[node name="Heart" type="CharacterBody2D" parent="."]
+texture_filter = 1
+position = Vector2(50, 455)
+script = ExtResource("6_fmuk7")
+
+[node name="Soul" type="Sprite2D" parent="Heart"]
+modulate = Color(1, 0, 0, 1)
+texture_filter = 1
+texture = SubResource("AtlasTexture_vopmp")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heart"]
+shape = SubResource("CircleShape2D_fabvt")
+metadata/_edit_lock_ = true
+
+[node name="Hitbox" type="Area2D" parent="Heart"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Heart/Hitbox"]
+polygon = PackedVector2Array(1, -3, 1, -4, 2, -4, 2, -5, 4, -5, 4, -4, 5, -4, 5, 1, 4, 1, 4, 2, 3, 2, 3, 3, 2, 3, 2, 4, 1, 4, 1, 5, -1, 5, -1, 4, -2, 4, -2, 3, -3, 3, -3, 2, -4, 2, -4, 1, -5, 1, -5, -4, -4, -4, -4, -5, -2, -5, -2, -4, -1, -4, -1, -3)
+one_way_collision_margin = 0.0
+metadata/_edit_lock_ = true
+
+[node name="Sounds" type="Node" parent="."]
+script = ExtResource("9_d1mom")
+
+[node name="Select" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("8_0rdin")
+
+[node name="Accept" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("9_fsq6v")
+
+[node name="Text" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("10_f1uh5")

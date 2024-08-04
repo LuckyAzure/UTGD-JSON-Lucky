@@ -11,7 +11,7 @@ var nodes = {}
 func _ready():
 	select = Global.nextselect
 	$Soul.position.y = 256.0 + (select * 40.0)
-	$Version.text = Global.version
+	$Version.text = ProjectSettings.get_setting("application/config/version")
 	for option in options:
 		nodes[option] = get_node(option)
 

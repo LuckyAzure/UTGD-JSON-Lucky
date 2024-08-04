@@ -1,9 +1,21 @@
 {
 	"name":"Template",
 	"flags":[
+		"CUSTOM_STATS",
 		"NO_FLEE",
 		"GENOCIDE"
 	],
+	"custom_stats":{
+		"lv": 19,
+		"hp": 92,
+		"type": "KR",
+		"items": [
+			["Test1", 10],
+			["Test2", 20],
+			["Test3", 30],
+			["Test4", 40]
+		]
+	}
 	"chars":[
 		{
 			"name":"sans",

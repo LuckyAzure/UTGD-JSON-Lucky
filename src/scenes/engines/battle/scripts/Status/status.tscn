@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7cw0tu8ni0gi"]
+[gd_scene load_steps=13 format=3 uid="uid://b7cw0tu8ni0gi"]
 
+[ext_resource type="Script" path="res://src/scenes/engines/battle/scripts/Status/status.gd" id="1_o7win"]
 [ext_resource type="Shader" path="res://src/shaders/outline.gdshader" id="1_yb8rj"]
 [ext_resource type="FontFile" uid="uid://dyebg3aqbbu6t" path="res://assets/fonts/Mars_Needs_Cunnilingus.ttf" id="2_100dm"]
 [ext_resource type="Texture2D" uid="uid://psejf8exoxpf" path="res://src/scenes/engines/battle/images/texture.png" id="3_qqiet"]
+[ext_resource type="Script" path="res://src/scenes/engines/battle/scripts/Status/Bar.gd" id="5_ke6a2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_37jto"]
 shader = ExtResource("1_yb8rj")
@@ -13,6 +15,10 @@ base_font = ExtResource("2_100dm")
 [sub_resource type="AtlasTexture" id="AtlasTexture_aiibm"]
 atlas = ExtResource("3_qqiet")
 region = Rect2(0, 96, 27, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5flsd"]
+atlas = ExtResource("3_qqiet")
+region = Rect2(0, 112, 27, 14)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f687g"]
 bg_color = Color(1, 0, 0, 0)
@@ -25,6 +31,7 @@ bg_color = Color(1, 1, 0, 1)
 
 [node name="Status" type="Node2D"]
 position = Vector2(320, 410)
+script = ExtResource("1_o7win")
 
 [node name="Name" type="Label" parent="."]
 texture_filter = 1
@@ -75,33 +82,39 @@ theme_override_font_sizes/font_size = 24
 text = "1"
 
 [node name="HP" type="Node2D" parent="."]
+position = Vector2(-20, 0)
 
-[node name="Text" type="Sprite2D" parent="HP"]
+[node name="HP_Text" type="Sprite2D" parent="HP"]
 position = Vector2(-78, -7)
 texture = SubResource("AtlasTexture_aiibm")
 centered = false
 
+[node name="SPL_Text" type="Sprite2D" parent="HP"]
+position = Vector2(-14, -7)
+texture = SubResource("AtlasTexture_5flsd")
+centered = false
+
 [node name="Bar" type="Node2D" parent="HP"]
+position = Vector2(-45, 0)
+script = ExtResource("5_ke6a2")
 
 [node name="Outline" type="ColorRect" parent="HP/Bar"]
-offset_left = -47.0
+offset_left = -2.0
 offset_top = -12.0
-offset_right = -18.0
+offset_right = 27.0
 offset_bottom = 13.0
 color = Color(0, 0, 0, 1)
 
 [node name="Back" type="ColorRect" parent="HP/Bar"]
-offset_left = -45.0
 offset_top = -10.0
-offset_right = -20.0
+offset_right = 25.0
 offset_bottom = 11.0
 color = Color(1, 0, 0, 1)
 
 [node name="Special" type="ProgressBar" parent="HP/Bar"]
 texture_filter = 1
-offset_left = -45.0
 offset_top = -10.0
-offset_right = -20.0
+offset_right = 25.0
 offset_bottom = 11.0
 theme_override_styles/background = SubResource("StyleBoxFlat_f687g")
 theme_override_styles/fill = SubResource("StyleBoxFlat_02g1s")
@@ -111,9 +124,8 @@ show_percentage = false
 
 [node name="Bar" type="ProgressBar" parent="HP/Bar"]
 texture_filter = 1
-offset_left = -45.0
 offset_top = -10.0
-offset_right = -20.0
+offset_right = 25.0
 offset_bottom = 11.0
 theme_override_styles/background = SubResource("StyleBoxFlat_f687g")
 theme_override_styles/fill = SubResource("StyleBoxFlat_g30r5")
@@ -124,9 +136,9 @@ show_percentage = false
 [node name="Number" type="Label" parent="HP"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_37jto")
-offset_left = -6.0
+offset_left = 28.0
 offset_top = -10.0
-offset_right = 37.0
+offset_right = 121.0
 offset_bottom = 14.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)

@@ -1,8 +1,5 @@
 extends CanvasLayer
 
-# Game version
-var version = "UTGD v0.05 (Alpha)"
-
 # Global Ready
 func _ready():
 	$Fade.modulate.a = 1
@@ -137,3 +134,9 @@ func Fade_Tick(delta):
 		$Fade.modulate.a = 0
 	elif $Fade.modulate.a > 1:
 		$Fade.modulate.a = 1
+
+func get_scene():
+	return get_tree().get_current_scene()
+
+func get_node_scene(node_path):
+	return get_tree().get_current_scene().get_node(node_path)

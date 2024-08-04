@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://qnsidkwe6v3q"
+path="res://.godot/imported/hl3.ogg-7e1abd39215972da55138994a29caead.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/battle/encounters/Dusttrust X Phase 1/musics/hl3.ogg"
+dest_files=["res://.godot/imported/hl3.ogg-7e1abd39215972da55138994a29caead.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

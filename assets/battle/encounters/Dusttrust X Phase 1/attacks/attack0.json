@@ -1,0 +1,9 @@
+{
+	"soul": "red",
+	"attack":
+	[
+		[0, "bone", {"position": [200, 200], "size": 20, "speed": [2, 0]}],
+		[200, "bone", {"position": [200, 200], "size": 20, "speed": [2, 0]}]
+	],
+	"end": 500
+}
